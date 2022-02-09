@@ -7,7 +7,7 @@ Each student gives exams for three subjects—Math, Physics and Chemistry. Math 
 # Rules for Passing
 The student has to get at least 50% of the total marks of a portion to pass in that portion (theoretical or practical) The student has to pass in both portions to pass the subject If the subject has papers, the student has to pass in both papers The student has to pass in all 3 subjects to get a pass in the full exam
  # File Formats
-All input files are CSV files, but the field separator is a ":" (colon), instead of comma.</div>
+All input files are CSV files, but the field separator is a ":" (colon), instead of comma.
 
 #_How I have solved this._
 *1.* I read paper related file in **_paper_** class and student **info** in **_student_** class by the help of **fileReader** function of _**Filehandler**_ \
