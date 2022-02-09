@@ -49,11 +49,5 @@ public class Resultantly {
             mr.show(roll,grade);
         }
         filehandler.writeResult(roll,name,Integer.toString(totalMark),totalGrade);
-
-
-
-
-
     }
-
 }

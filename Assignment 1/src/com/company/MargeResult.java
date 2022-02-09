@@ -26,20 +26,14 @@ public class MargeResult{
         marge[2]=Integer.toString(marks);
         result.put(paperCode,marge);
     }
-    public HashMap<String,String[]> getResult(){
-        return result;
-    }
 
     public void show(String roll, String[] grade) {
         String grd="F";
         if(Objects.equals(grade[0], "T") && Objects.equals(grade[1], "T")){
             grd="T";
         }
-        HashMap<String,String>subjectPaperMap=new HashMap<>();
         Paper paper=new Paper();
-        subjectPaperMap= paper.subjectPaper();
-
-     //   System.out.println(roll+":"+subjectPaperMap.get(paperCode)+":"+marks+":"+grd );
+        HashMap<String,String>subjectPaperMap=paper.subjectPaper();
         filehandler.writeResultForMarkSheet(roll,subjectPaperMap.get(paperCode), String.valueOf(marks),grd);
 
     }

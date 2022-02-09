@@ -7,7 +7,7 @@ public class Filehandler {
     public static String writingPath="/home/dsi/work/DSi Assignment/Assignment 1/Output Files/";
     public static String readingPath="/home/dsi/work/DSi Assignment/Assignment 1/provided Files/";
     public HashMap<Integer,String[]> fileReader(String fileName){
-        HashMap<Integer,String[]> filecontainer=new HashMap<>();
+        HashMap<Integer,String[]> fileContainer=new HashMap<>();
         String path=readingPath+fileName;
         String line="";
         try {
@@ -15,13 +15,13 @@ public class Filehandler {
             int i=1;
             while ((line=bufferedReader.readLine())!=null){
                 String[] value=line.split(":");
-                filecontainer.put(i,value);
+                fileContainer.put(i,value);
                 i++;
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return filecontainer;
+        return fileContainer;
     }
     public static final String CSVFilePath = writingPath+"result.csv";
     List<List<String>> row = new ArrayList<>();

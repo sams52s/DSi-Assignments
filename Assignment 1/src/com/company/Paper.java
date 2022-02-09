@@ -1,6 +1,5 @@
 package com.company;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Objects;
 
@@ -24,10 +23,10 @@ public class Paper {
         for (int i=1;i<=paperInfo.size();i++){
             if(Objects.equals(paperCode[i - 1], paperInfo.get(i)[0])){
                int theory=Integer.parseInt(paperInfo.get(i)[5])/2;
-               int prectical=Integer.parseInt(paperInfo.get(i)[6])/2;
+               int practical=Integer.parseInt(paperInfo.get(i)[6])/2;
                int[][] passMarks= new int[1][2];
                passMarks[0][0]=theory;
-               passMarks[0][1]=prectical;
+               passMarks[0][1]=practical;
                passMark.put(paperInfo.get(i)[0],passMarks);
             }
         }
