@@ -7,7 +7,6 @@ Each student gives exams for three subjects—Math, Physics and Chemistry. Math 
 # Rules for Passing
 The student has to get at least 50% of the total marks of a portion to pass in that portion (theoretical or practical) The student has to pass in both portions to pass the subject If the subject has papers, the student has to pass in both papers The student has to pass in all 3 subjects to get a pass in the full exam
  # File Formats
-<div style="color: #F67280">
 All input files are CSV files, but the field separator is a ":" (colon), instead of comma.</div>
 
 #*_How I have solved this._*
@@ -16,7 +15,7 @@ class and then those information are order in a **`HashMap`**. \
 *2.* By the help of some for **`loop`** I connect all necessary information and create the desired output. \
 *3.* Finally I write my output by **writing** method of **_Filehandler_** class.
 
-#<div style="color: #7B68EE">&#x2600;Key materials
+#&#x2600;Key materials
 >HashMap \
 > 2D Array \
-> Lists \
+> Lists 
