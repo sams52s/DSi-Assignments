@@ -1,3 +1,0 @@
-#Purpose...
-This Repository comprise with assignments for my Intern course in Dynamic Solution Innovators (DSi) .
-
