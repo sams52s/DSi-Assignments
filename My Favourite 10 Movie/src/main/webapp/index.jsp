@@ -3,8 +3,8 @@
 <html>
 <head>
     <%@include file="resources/links.jsp"%>
+    <link rel="stylesheet" href="./resources/style.css">
     <title>Movie List</title>
-    
 </head>
 <body>
 <div class="table-sub-heading-color">
@@ -37,6 +37,24 @@
                 <br> in the Seshachalam forests of South India.</td>
             <td><img src="https://www.koimoi.com/wp-content/new-galleries/2021/12/allu-arjun-opens-up-about-his-plans-for-pushpa-2-001.jpg" alt="poster"></td>
         </tr>
+        <tbody>
+        <c:forEach var="movie" items="${movie}">
+
+            <tr>
+                <td><c:out value="${movie.name}" /></td>
+                <td><c:out value="${movie.releaseDate}" /></td>
+                <td><c:out value="${movie.type}" /></td>
+                <td><c:out value="${movie.Duration}" /></td>
+                <td><c:out value="${movie.Description}" /></td>
+                <td><c:out value="${movie.img}" /></td>
+
+                <td><a href="edit?id=<c:out value='${movie.id}' />">Edit</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp; <a
+                            href="delete?id=<c:out value='${movie.id}' />">Delete</a></td>
+            </tr>
+        </c:forEach>
+        <!-- } -->
+        </tbody>
     </table>
     </div>
     <a href="view/addFavouriteMovie.jsp">Add</a>

@@ -1,7 +1,37 @@
 package sams.movielist.model;
 import java.io.Serializable;
 public class Movie implements Serializable{
+    private long id;
     private String name,date,type,duration,description,url;
+
+    public Movie(){}
+    public Movie(long id, String name,String date, String type, String duration,String description, String url ){
+        super();
+        this.id=id;
+        this.name=name;
+        this.date=date;
+        this.type=type;
+        this.duration=duration;
+        this.description=description;
+        this.url=url;
+    }
+    public Movie(String name,String date, String type, String duration,String description, String url ){
+        super();
+        this.name=name;
+        this.date=date;
+        this.type=type;
+        this.duration=duration;
+        this.description=description;
+        this.url=url;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;

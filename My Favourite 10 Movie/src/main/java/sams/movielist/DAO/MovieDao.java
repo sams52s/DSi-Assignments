@@ -9,15 +9,8 @@ public class MovieDao {
     public int addMovie(Movie favourite) {
         String INSERT="INSERT INTO list"+"(name,img,type,releaseDate,duration,description) VALUES "+"(?,?,?,?,?,?);";
         int result=0;
-        try(Connection connection= JDBCon.getConnection();
-            PreparedStatement preparedStatement=connection.prepareStatement(INSERT)){
-            preparedStatement.setString(1,favourite.getName());
-            preparedStatement.setString(2,favourite.getUrl());
-            preparedStatement.setString(3,favourite.getType());
-            preparedStatement.setString(4,favourite.getDate());
-            preparedStatement.setString(5,favourite.getDuration());
-            preparedStatement.setString(6,favourite.getDescription());
-            System.out.println(preparedStatement);
+        try(Connection connection= JDBCon.getConnection(); PreparedStatement preparedStatement=connection.prepareStatement(INSERT)){
+            INSERT(favourite, preparedStatement);
             result=preparedStatement.executeUpdate();
         }
         catch (SQLException e){
@@ -25,4 +18,15 @@ public class MovieDao {
         }
         return result;
     }
+
+    static void INSERT(Movie favourite, PreparedStatement preparedStatement) throws SQLException {
+        preparedStatement.setString(1,favourite.getName());
+        preparedStatement.setString(2,favourite.getUrl());
+        preparedStatement.setString(3,favourite.getType());
+        preparedStatement.setString(4,favourite.getDate());
+        preparedStatement.setString(5,favourite.getDuration());
+        preparedStatement.setString(6,favourite.getDescription());
+        System.out.println(preparedStatement);
+    }
+
 }
