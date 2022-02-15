@@ -17,15 +17,15 @@ public class StudentConfig {
                     "Physics",
                     "5000"
            );
-            StudentModel aly= new StudentModel(
-                    "aly",
-                    "9",
+            StudentModel toufiq= new StudentModel(
+                    "toufiq",
+                    "8",
                     "Physics",
-                    "5000"
+                    "3000"
             );
 
             repository.saveAll(
-                    List.of(sams,aly)
+                    List.of(sams,toufiq)
             );
         };
     }
