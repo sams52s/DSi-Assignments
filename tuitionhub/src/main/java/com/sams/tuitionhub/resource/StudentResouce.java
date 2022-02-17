@@ -1,4 +1,4 @@
-package com.sams.tuitionhub;
+package com.sams.tuitionhub.resource;
 
 import com.sams.tuitionhub.model.Student;
 import com.sams.tuitionhub.service.StudentSerevice;
