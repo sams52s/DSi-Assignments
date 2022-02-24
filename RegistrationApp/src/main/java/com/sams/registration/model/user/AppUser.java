@@ -20,7 +20,7 @@ import java.util.Collections;
 @Entity
 public class AppUser implements UserDetails {
     @SequenceGenerator(
-            name = "student_sequence",
+            name = "person_sequence",
             sequenceName = "person_sequence",
             allocationSize = 1
     )

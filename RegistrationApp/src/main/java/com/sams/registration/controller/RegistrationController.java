@@ -12,10 +12,12 @@ import org.springframework.web.bind.annotation.*;
 @AllArgsConstructor
 public class RegistrationController {
 
+/*
     @GetMapping({"/", "index"})
     public String getIndex(Model model){
         return "index";
     }
+*/
 
     private final RegistrationService registrationService;
     @PostMapping
