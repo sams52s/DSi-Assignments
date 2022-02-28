@@ -4,11 +4,13 @@ import com.sams.registration.model.registration.RegistrationRequest;
 import com.sams.registration.service.RegistrationService;
 import lombok.AllArgsConstructor;
 import org.apache.tomcat.jni.User;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(path = "api/v1/registration")
+@Controller
+@RequestMapping(path = "/registration")
 @AllArgsConstructor
 public class RegistrationController {
 

@@ -9,7 +9,7 @@ import org.springframework.web.context.request.WebRequest;
 public class AppController {
 
     // Login form
-    @RequestMapping("/login.html")
+    @RequestMapping("login.html")
     public String login() {
         return "login";
     }
@@ -20,8 +20,12 @@ public class AppController {
         model.addAttribute("loginError", true);
         return "login.html";
     }
-    @GetMapping("/registration")
+    @GetMapping("registration")
     public String showRegistrationForm(WebRequest request, Model model) {
         return "registration";
+    }
+    @GetMapping("/")
+    public String home() {
+        return "index";
     }
 }

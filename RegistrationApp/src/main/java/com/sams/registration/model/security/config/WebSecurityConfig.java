@@ -11,6 +11,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @AllArgsConstructor
@@ -23,13 +24,26 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/api/v*/registration/**")
-                .authenticated().and()
+                .antMatchers("/index.html").permitAll()
+                .antMatchers("/profile/**").authenticated()
+                .antMatchers("/admin/**").hasRole("ADMIN")
+                .antMatchers("/user/**").hasAnyRole("ADMIN", "USER")
+                .antMatchers("/api/public/test1").hasAuthority("ACCESS_TEST1")
+                .antMatchers("/api/public/test2").hasAuthority("ACCESS_TEST2")
+                .antMatchers("/api/public/users").hasRole("ADMIN")
+//                .antMatchers("/api/v*/registration/**")
+//                .authenticated()
+                .and()
                 .formLogin()
-                .loginPage("/login.html")
-                .loginProcessingUrl("/perform_login")
+                .loginPage("/login").permitAll()
+                .loginProcessingUrl("/signin")
                 .defaultSuccessUrl("/index.html",true)
-                .failureUrl("/login.html?error=true");
+                .failureUrl("/login.html?error=true")
+                .and()
+                .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/login")
+                .and()
+                .rememberMe().tokenValiditySeconds(300).key("mySecret!").rememberMeParameter("checkRememberMe");
+
 //                .csrf().disable()
 //                .authorizeRequests()
 //                .antMatchers("/admin").hasRole("ADMIN")

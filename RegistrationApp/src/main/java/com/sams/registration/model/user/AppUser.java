@@ -49,6 +49,7 @@ public class AppUser implements UserDetails {
     }
 
     public AppUser(String firstName, String lastName, String email, String password, UserRole userRole) {
+        super();
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -108,5 +109,9 @@ public class AppUser implements UserDetails {
     @Override
     public boolean isEnabled() {
         return enabled;
+    }
+
+    public UserRole getRoles() {
+        return userRole;
     }
 }
