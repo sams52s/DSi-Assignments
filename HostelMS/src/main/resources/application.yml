@@ -13,6 +13,13 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create-drop
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 970707355379-ir5g2cf6163e8uo4v7ska615magtlqbn.apps.googleusercontent.com
+            client-secret: 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
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
