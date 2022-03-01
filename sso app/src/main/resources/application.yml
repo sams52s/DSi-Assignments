@@ -1,0 +1,11 @@
+#spring.security.oauth2.client.registration.google.client-id=970707355379-89pq1jioq4vn0vjue40k20tdtj5ild6h.apps.googleusercontent.com
+#spring.security.oauth2.client.registration.google.client-secret=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
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 970707355379-89pq1jioq4vn0vjue40k20tdtj5ild6h.apps.googleusercontent.com
+            client-secret: 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
