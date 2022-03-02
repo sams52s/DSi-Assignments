@@ -5,5 +5,6 @@
 - Spring BOOT <br/>
 - Spring Security<br/>
 - Thymeleaf <br/>
+- JWT (JSON WEB TOKEN)
 - SSO <br/>
 - maildev for email verification <br/>
